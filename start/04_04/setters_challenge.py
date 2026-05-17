@@ -25,7 +25,10 @@ class BankAccount:
         self._account_holder = account_holder
 
     def set_balance(self, balance):
-        pass
+        if balance < 0:
+            print("Error - Balance cannot be non-negative")
+        else:
+            self._balance = balance
 
 
 # Example usage
@@ -38,5 +41,5 @@ if __name__ == "__main__":
     print("Account Holder:", my_account.get_account_holder())
     print("Balance:", my_account.get_balance())
 
-    my_account.set_balance(6000)
+    my_account.set_balance(-500)
     print("Balance:", my_account.get_balance())
